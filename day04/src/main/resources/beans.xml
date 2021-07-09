@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--注册bean-->
+    <bean id="teacher1" class="org.example.pojo.Teacher">
+        <!--属性注入-->
+        <property name="name" value="张三"/>
+        <property name="course_name" value="计算机网络"/>
+        <property name="master" value="true"/>
+        <property name="students">
+            <array>
+                <ref bean="stu1"/>
+                <ref bean="stu2"/>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="stu1" class="org.example.pojo.Student">
+        <property name="student_name" value="刘美麟"/>
+        <property name="stu_ID" value="3118005030"/>
+        <property name="class_number" value="02"/>
+    </bean>
+
+    <bean id="stu2" class="org.example.pojo.Student">
+        <property name="student_name" value="王八"/>
+        <property name="stu_ID" value="3118005031"/>
+        <property name="class_number" value="03"/>
+    </bean>
+    <!--开启注解扫描-->
+    <context:component-scan base-package="org.example"/>
+</beans>
