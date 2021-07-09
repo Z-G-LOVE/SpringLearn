@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注册user-->
+    <bean id="user" class="org.example.pojo.User"/>
+
+    <!--spring依赖注入-->
+    <!--1. 使用set()方法注入-->
+    <bean id="book" class="org.example.pojo.Book">
+        <property name="bookName" value="《金瓶梅》"/>
+        <property name="bookAuthor" value="兰陵笑笑生"/>
+    </bean>
+
+    <!--2. 使用有参构造器实现依赖注入-->
+    <bean id="order" class="org.example.pojo.Order">
+        <constructor-arg name="name" value="one者天下"/>
+        <constructor-arg name="good" value="仙女棒"/>
+        <constructor-arg name="index" value="1"/>
+    </bean>
+</beans>
