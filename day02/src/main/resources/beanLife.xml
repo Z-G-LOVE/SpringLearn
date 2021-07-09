@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注册student类的实例-->
+    <!--使用init-method属性定义初始化方法-->
+    <!--使用destroy-method属性定义销毁方法-->
+    <bean id="student" class="org.example.pojo.Student" init-method="init" destroy-method="destroy">
+        <property name="name" value="张三"/>
+    </bean>
+    <!--注册BeanPostProcessor的实现类-->
+    <bean id="myProcessor" class="org.example.processor.MyProcessor"/>
+</beans>

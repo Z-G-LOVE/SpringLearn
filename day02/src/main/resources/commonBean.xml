@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SpringFacetInspection -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <util:list id="goods">
+        <value>小米手机</value>
+        <value>耐克球鞋</value>
+        <value>星巴克咖啡</value>
+    </util:list>
+
+    <util:list id="ids">
+        <value>5200</value>
+        <value>2500</value>
+        <value>6500</value>
+    </util:list>
+
+    <util:map id="value">
+        <entry key="小米手机" value="5200.0"/>
+        <entry key="耐克球鞋" value="1300.0"/>
+        <entry key="星巴克咖啡" value="200.0"/>
+    </util:map>
+
+    <util:list id="goodAttributes">
+        <bean name="xiaomi" class="org.example.pojo.Goods">
+            <property name="good_name" value="小米11"/>
+            <property name="good_ID" value="5200"/>
+            <property name="good_price" value="5200.0"/>
+        </bean>
+        <bean name="naike" class="org.example.pojo.Goods">
+            <property name="good_name" value="耐克球鞋"/>
+            <property name="good_ID" value="2500"/>
+            <property name="good_price" value="1300.0"/>
+        </bean>
+        <bean name="coffer" class="org.example.pojo.Goods">
+            <property name="good_name" value="星巴克咖啡"/>
+            <property name="good_ID" value="6500"/>
+            <property name="good_price" value="200.0"/>
+        </bean>
+    </util:list>
+
+    <bean name="user" class="org.example.pojo.User" >
+        <property name="goods" ref="goods"/>
+        <property name="ids" ref="ids"/>
+        <property name="value" ref="value"/>
+        <property name="goodAttributes" ref="goodAttributes"/>
+    </bean>
+
+    <bean name="user2" class="org.example.pojo.User" >
+        <property name="goods" ref="goods"/>
+        <property name="ids" ref="ids"/>
+        <property name="value" ref="value"/>
+        <property name="goodAttributes" ref="goodAttributes"/>
+    </bean>
+</beans>

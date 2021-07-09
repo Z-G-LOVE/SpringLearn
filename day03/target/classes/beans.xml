@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--引入外部文件-->
+    <context:property-placeholder location="classpath:user.properties"/>
+    <!--注册bean-->
+    <bean id="user" class="org.example.pojo.User">
+        <!--属性注册-->
+        <property name="user_name" value="${user.user_name}"/>
+        <property name="user_ID" value="${user.user_ID}"/>
+        <property name="account_money" value="${user.account_money}"/>
+        <property name="user_mail" value="${user.user_mail}"/>
+        <property name="user_phone" value="${user.user_phone}"/>
+    </bean>
+
+</beans>
